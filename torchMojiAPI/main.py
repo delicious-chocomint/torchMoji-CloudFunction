@@ -3,6 +3,7 @@
 from __future__ import print_function, division, unicode_literals
 import json
 import numpy as np
+from os.path import abspath, dirname
 
 from torchmoji.sentence_tokenizer import SentenceTokenizer
 from torchmoji.model_def import torchmoji_emojis
@@ -29,6 +30,8 @@ def textToEmoji(request):
       txt = request_args['text']
     else:
       txt = None
+  print(txt)
+  print(dirname(dirname(abspath(__file__))))
 
   def top_elements(array, k):
     ind = np.argpartition(array, -k)[-k:]
@@ -52,3 +55,5 @@ def textToEmoji(request):
   
   print(result)
   return result
+
+# textToEmoji("Hello")
