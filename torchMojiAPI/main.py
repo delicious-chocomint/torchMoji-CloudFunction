@@ -3,11 +3,13 @@
 from __future__ import print_function, division, unicode_literals
 import json
 import numpy as np
+import emoji
 from os.path import abspath, dirname
 
 from torchmoji.sentence_tokenizer import SentenceTokenizer
 from torchmoji.model_def import torchmoji_emojis
 from torchmoji.global_variables import PRETRAINED_PATH, VOCAB_PATH
+from torchmoji.emoji_maps import DEEPMOJI_MAP, EMOJI_TO_EMOTION
 
 def textToEmoji(request):
   """HTTP Cloud function.
@@ -51,7 +53,8 @@ def textToEmoji(request):
   ind_top = top_elements(t_prob, 5).tolist()
   for i in range(5):
     key = "emoji" + str(i)
-    result.update({key: ind_top[i]})
+    key2 = key + "_emotion"
+    result.update({key: emoji.emojize(DEEPMOJI_MAP[ind_top[i]], use_aliases=True), key2: EMOJI_TO_EMOTION[ind_top[i]]})
   
   print(result)
   return result
