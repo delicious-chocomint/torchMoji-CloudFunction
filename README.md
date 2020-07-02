@@ -1,7 +1,8 @@
 # torchMoji-CloudFunction
 Updated dependencies, and made minor edits to enable the code to run on python 3.7.
 Developed for deployment to Google Cloud Console, for a RESTful API.
-```// sample request
+```
+// sample request
 https://xxxxx.cloudfunctions.net/textToEmoji?text=Good%20morning
 // data response
 {"emoji0":16,"emoji1":7,"emoji2":53,"emoji3":15,"emoji4":63,"text":"Good morning"}
