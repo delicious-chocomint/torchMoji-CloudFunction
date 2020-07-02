@@ -1,3 +1,21 @@
+# torchMoji-CloudFunction
+Updated dependencies, and made minor edits to enable the code to run on python 3.7.
+Developed for deployment to Google Cloud Console, for a RESTful API.
+```// sample request
+https://xxxxx.cloudfunctions.net/textToEmoji?text=Good%20morning
+// data response
+{"emoji0":16,"emoji1":7,"emoji2":53,"emoji3":15,"emoji4":63,"text":"Good morning"}
+```
+
+# Setup
+
+There is no need to run the script to download the pretrained touchMoji weights, as they have been included in this repo for convenience.
+1. Set up a Google cloud project and install the Cloud SDK with instructions from [link](https://cloud.google.com/functions/docs/first-python#creating_a_gcp_project_using_cloud_sdk)
+2. In [torchMojiAPI](torchMojiAPI) run `gcloud functions deploy textToEmoji --runtime python37 --memory 512MB --trigger-http --allow-unauthenticated`
+3. Keep note of the `httpsTrigger` URL returned by the output, or run `gcloud functions describe textToEmoji` for the API URL.
+
+### Original README is kept below.
+
 ### ------ Update September 2018 ------
 It's been a year since TorchMoji and DeepMoji were released. We're trying to understand how it's being used such that we can make improvements and design better models in the future. 
 
