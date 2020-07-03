@@ -11,13 +11,13 @@ https://xxxxx.cloudfunctions.net/textToEmoji?text=I%20know%20good%20movies,%20th
   "emoji0": "🙅",
   "emoji0_emotion": "Disapproval",
   "emoji1": "💯",
-  "emoji1_emotion": "Awe",
+  "emoji1_emotion": "Amazement",
   "emoji2": "✋",
   "emoji2_emotion": "Dismay",
   "emoji3": "😌",
   "emoji3_emotion": "Optimism",
   "emoji4": "😏",
-  "emoji4_emotion": "Bemusement",
+  "emoji4_emotion": "Amusement",
   "text": "I know good movies, this ain't one"
 }
 ```
