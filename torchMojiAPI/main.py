@@ -1,10 +1,8 @@
 # Use torchMoji to retrieve emoji most associated with the text.
 
-from __future__ import print_function, division, unicode_literals
 import json
 import numpy as np
 import emoji
-from os.path import abspath, dirname
 
 from torchmoji.sentence_tokenizer import SentenceTokenizer
 from torchmoji.model_def import torchmoji_emojis
@@ -31,9 +29,8 @@ def textToEmoji(request):
     elif request_args and 'text' in request_args:
       txt = request_args['text']
     else:
-      txt = None
+      txt = "SAMPLE TEXT"
   print(txt)
-  print(dirname(dirname(abspath(__file__))))
 
   def top_elements(array, k):
     ind = np.argpartition(array, -k)[-k:]
