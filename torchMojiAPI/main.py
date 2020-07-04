@@ -45,7 +45,7 @@ def textToEmoji(request):
   tokenized, _, _ = st.tokenize_sentences([txt])
   prob = model(tokenized)
 
-  result = {"text": txt}
+  result = {}
   t_prob=prob[0]
   ind_top = top_elements(t_prob, 5).tolist()
   for i in range(5):

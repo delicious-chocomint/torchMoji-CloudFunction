@@ -18,8 +18,7 @@ https://xxxxx.cloudfunctions.net/textToEmoji?text=I%20know%20good%20movies,%20th
   "emoji3": "😌",
   "emoji3_emotion": "Optimism",
   "emoji4": "😏",
-  "emoji4_emotion": "Amusement",
-  "text": "I know good movies, this ain't one"
+  "emoji4_emotion": "Amusement"
 }
 ```
 
