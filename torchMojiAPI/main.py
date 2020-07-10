@@ -9,6 +9,19 @@ from torchmoji.model_def import torchmoji_emojis
 from torchmoji.global_variables import PRETRAINED_PATH, VOCAB_PATH
 from torchmoji.emoji_maps import DEEPMOJI_MAP, EMOJI_TO_EMOTION
 
+DEFAULT_RESPONSE = {
+  "emoji0": "",
+  "emoji0_emotion": "",
+  "emoji1": "",
+  "emoji1_emotion": "",
+  "emoji2": "",
+  "emoji2_emotion": "",
+  "emoji3": "",
+  "emoji3_emotion": "",
+  "emoji4": "",
+  "emoji4_emotion": ""
+}
+
 def textToEmoji(request):
   """HTTP Cloud function.
   Args: 
@@ -19,18 +32,20 @@ def textToEmoji(request):
     Response object using `make_response`
     <http://flask.pocoo.org/docs/1.0/api/#flask.Flask.make_response>.
   """
-  # Debugging
-  if True:
-    request_json = request.get_json(silent=True)
-    request_args = request.args
+  request_json = request.get_json(silent=True)
+  request_args = request.args
 
-    if request_json and 'text' in request_json:
-      txt = request_json['text']
-    elif request_args and 'text' in request_args:
-      txt = request_args['text']
-    else:
-      txt = "SAMPLE TEXT"
-  print(txt)
+  if request_json and 'text' in request_json:
+    txt = request_json['text']
+  elif request_args and 'text' in request_args:
+    txt = request_args['text']
+  else:
+    print("No text provided.")
+    return DEFAULT_RESPONSE
+
+  if not txt: 
+    print("Empty text provided")
+    return DEFAULT_RESPONSE
 
   def top_elements(array, k):
     ind = np.argpartition(array, -k)[-k:]
@@ -55,5 +70,3 @@ def textToEmoji(request):
   
   print(result)
   return result
-
-# textToEmoji("Hello")
