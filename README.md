@@ -29,4 +29,10 @@ Note that a response may take 10~20 seconds, due to the nature of cloud function
 1. Download the pretrained torchMoji weights from [here](https://www.dropbox.com/s/q8lax9ary32c7t9/pytorch_model.bin?dl=0) and put them in the `torchMojiAPI/model` directory
 1. Set up a Google cloud project and install the Cloud SDK with instructions from [link](https://cloud.google.com/functions/docs/first-python#creating_a_gcp_project_using_cloud_sdk)
 1. In [torchMojiAPI](torchMojiAPI) run `gcloud functions deploy textToEmoji --runtime python37 --memory 512MB --trigger-http --allow-unauthenticated`
-1. Keep note of the `httpsTrigger` URL returned by the output, or run `gcloud functions describe textToEmoji` for the API URL.
+1. Keep note of the `httpsTrigger` URL returned by the output, or run `gcloud functions describe textToEmoji` for the endpoint URL.
+
+# Testing 
+
+1. Deploy cloud function as described above.
+1. Rename `tests/example.URL.py` to `URL.py` and replace the string with the endpoint URL.
+1. In `tests` directory, run `python test.py`
