@@ -1,5 +1,5 @@
 # from https://github.com/OpenJarbas/simple_deepmoji
-# modified by delicious-chocomint
+# modified by ktaekwon000
 
 # useful packages
 # https://github.com/carpedm20/emoji
