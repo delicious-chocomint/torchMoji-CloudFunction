@@ -2,7 +2,7 @@
 
 Forked from [😇 torchMoji](https://github.com/huggingface/torchMoji).
 Updated dependencies, and made minor edits to enable the code to run on python 3.7.
-Modified for deployment to Google Cloud Functions, for a RESTful API.
+Modified for deployment to Google Cloud Functions.
 
 ```
 // sample request
